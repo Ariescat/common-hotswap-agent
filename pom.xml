@@ -27,6 +27,7 @@
                             <addClasspath>true</addClasspath>
                         </manifest>
                         <manifestEntries>
+                            <Agent-Class>com.ariescat.hotswap.AgentMain</Agent-Class>
                             <!-- 参数方式启动agent需要这个 -->
                             <Premain-Class>com.ariescat.hotswap.AgentMain</Premain-Class>
                             <!-- 启动后附加启动agent需要这个 -->

@@ -13,6 +13,10 @@ import java.lang.instrument.Instrumentation;
 public class AgentMain {
 
     public static void agentmain(String args, Instrumentation inst) throws Exception {
+        premain(args, inst);
+    }
+
+    public static void premain(String args, Instrumentation inst) {
         System.out.println("agent 启动成功,开发重定义对象....");
 
         String pathname = "D:\\GitHubProjects\\ariescat-hotswap-core\\target\\classes\\com\\ariescat\\hotswap\\example\\RedefineBean.class";
