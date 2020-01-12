@@ -27,11 +27,10 @@
                             <addClasspath>true</addClasspath>
                         </manifest>
                         <manifestEntries>
-                            <Agent-Class>com.ariescat.hotswap.AgentMain</Agent-Class>
                             <!-- 参数方式启动agent需要这个 -->
-                            <Premain-Class>com.ariescat.hotswap.AgentMain</Premain-Class>
+                            <Premain-Class>com.ariescat.hotswap.instrument.AgentMain</Premain-Class>
                             <!-- 启动后附加启动agent需要这个 -->
-                            <Agent-Class>com.ariescat.hotswap.AgentMain</Agent-Class>
+                            <Agent-Class>com.ariescat.hotswap.instrument.AgentMain</Agent-Class>
                             <!-- 是否可以重新转换类 -->
                             <Can-Retransform-Classes>true</Can-Retransform-Classes>
                             <!-- 是否可以重新定义类 -->

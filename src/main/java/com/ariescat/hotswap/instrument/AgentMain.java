@@ -1,4 +1,4 @@
-package com.ariescat.hotswap;
+package com.ariescat.hotswap.instrument;
 
 import java.io.File;
 import java.io.FileInputStream;
