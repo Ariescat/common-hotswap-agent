@@ -12,13 +12,19 @@ import java.lang.instrument.Instrumentation;
  */
 public class AgentMain {
 
-    public static void agentmain(String args, Instrumentation inst) throws Exception {
+    public static void agentmain(String args, Instrumentation inst) {
         premain(args, inst);
     }
 
     public static void premain(String args, Instrumentation inst) {
-        System.out.println("agent 启动成功,开发重定义对象....");
+        System.out.println("Hotswap agent start...  [args is " + args);
 
+        test(inst);
+
+        System.out.println("Hotswap agent end.");
+    }
+
+    private static void test(Instrumentation inst) {
         String pathname = "D:\\GitHubProjects\\ariescat-hotswap-core\\target\\classes\\com\\ariescat\\hotswap\\example\\RedefineBean.class";
         File file = new File(pathname);
         if (!file.exists()) {
@@ -35,7 +41,6 @@ public class AgentMain {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println("热更新成功....");
     }
 
     private static byte[] fileToBytes(File file) throws IOException {
